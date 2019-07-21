@@ -1,0 +1,41 @@
+<html>
+<body>
+    <div class="smart-view">
+        <vg-player>
+            <vg-controls>
+
+                <app-start-button [playItem]="media"></app-start-button>
+                <app-pause-button [playItem]="media"></app-pause-button>
+                <app-volume-up-button [playItem]="media"></app-volume-up-button>
+                <app-volume-down-button [playItem]="media"></app-volume-down-button>
+                <app-stop-button [playItem]="media"></app-stop-button>
+                <app-like-button></app-like-button>
+                <app-unlike-button></app-unlike-button>
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+            
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+            
+                <vg-fullscreen></vg-fullscreen>
+
+
+            </vg-controls>
+            
+            <video #media
+                [vgMedia]="media"
+                [src]="currentItem.src"
+                id="singleVideo"
+                preload="auto"
+                crossorigin>
+            </video>          
+        </vg-player>
+    </div>       
+</body>
+</html>
